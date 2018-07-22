@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Title</title>
+</head>
+<body>
+    Hello.<br>
+    <div id = "app">{{ message }}</div>
+    <div id = "app2">
+        <button v-on:click = "click"> 点击事件 </button>
+    </div>
+    <div id = "app3">
+        <ol>       <todo-item
+                v-for="item in itemList"
+                v-bind:todo="item"
+                v-bind:key="item.id">
+        </todo-item>
+        </ol>
+        <button-counter></button-counter>
+    </div>
+    <div id="app4">
+        <button-counter></button-counter>
+        <button-count></button-count>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+            el : '#app',
+            data : {
+                message:'bonbonXD'
+            }
+        }
+    )
+    var app2 = new Vue({
+        el : '#app2',
+        methods :{
+            click: function () {
+                alert("hi")
+            }
+        }
+    })
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+
+    var app3 = new Vue({
+        el:'#app3',
+        data:{
+
+            itemList:[
+                {id:0, text:'苹果'},
+                {id:1, text:'香蕉'},
+                {id:3, text:'澄'}
+            ]
+        }
+    })
+
+    Vue.component('button-count',{
+
+        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>',
+        data: { count: 0 }
+    })
+    Vue.component('button-counter', {
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: '<button v-on:click="count++">{{ count }} times.</button>'
+    })
+    new Vue({
+        el:'#app4'
+    })
+</script>
+</html>
