@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns: xmlns:
+      xmlns: xmlns: xmlns: xmlns: xmlns: xmlns: xmlns:>
 
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
     <title>Title</title>
 </head>
 <body>
+
     Hello.<br>
     <div id = "app">{{ message }}</div>
     <div id = "app2">
@@ -25,55 +29,46 @@
         <button-counter></button-counter>
         <button-count></button-count>
     </div>
+
+    <div id = "app5">
+        <p>
+            <router-link to = "/foo">Go to Foo</router-link>
+            <router-link to = "/bar">Go to Bar</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+
+    <div id="blog_title" >
+        <div :style="{fontSize  : postFontSize + 'em' }">
+`       <blogtitle v-on:enlarge-text="postFontSize += 0.1" v-for="article in articles" v-bind:key="article.id" v-bind:article="article" ></blogtitle>
+        </div>
+    </div>
+
+
+    <div id = "threetabs">
+        <button @click:="change(tab)" v-for="tab in tabs">{{ tab }}</button>
+        <component
+                v-bind:is="currentTabComponent"
+        ></component>
+    </div>
+
+    <table id = "tabletest">
+        <thead>
+            <th>列1</th>
+            <th>列12</th>
+            <th>列13</th>
+            <th>列14</th>
+        </thead>
+        <tbody>
+            <tr v-for = "(comment,index) in comments">
+                <th>{{index}}</th>
+                <th>{{comment.id}}</th>
+                <th>{{comment.author}}</th>
+                <th>{{comment.text}}</th>
+            </tr>
+        </tbody>
+    </table>
 </body>
-<script>
-    var app = new Vue({
-            el : '#app',
-            data : {
-                message:'bonbonXD'
-            }
-        }
-    )
-    var app2 = new Vue({
-        el : '#app2',
-        methods :{
-            click: function () {
-                alert("hi")
-            }
-        }
-    })
-    Vue.component('todo-item', {
-        props: ['todo'],
-        template: '<li>{{ todo.text }}</li>'
-    })
 
-    var app3 = new Vue({
-        el:'#app3',
-        data:{
-
-            itemList:[
-                {id:0, text:'苹果'},
-                {id:1, text:'香蕉'},
-                {id:3, text:'澄'}
-            ]
-        }
-    })
-
-    Vue.component('button-count',{
-
-        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>',
-        data: { count: 0 }
-    })
-    Vue.component('button-counter', {
-        data: function () {
-            return {
-                count: 0
-            }
-        },
-        template: '<button v-on:click="count++">{{ count }} times.</button>'
-    })
-    new Vue({
-        el:'#app4'
-    })
-</script>
+<script type="text/javascript" src="./index.js"></script>
 </html>
