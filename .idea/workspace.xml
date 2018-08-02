@@ -88,8 +88,10 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/index.html">
           <provider selected="true" editor-type-id="text-editor">
+
             <state>
               <caret selection-end-line="11" selection-end-column="6" />
+
             </state>
           </provider>
         </entry>
@@ -220,10 +222,12 @@
       <created>1532310671083</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+
       <updated>1532310671083</updated>
     </task>
     <servers />
   </component>
+
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
@@ -275,6 +279,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="675">
           <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
         </state>
@@ -396,6 +401,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+
         </state>
       </provider>
     </entry>
