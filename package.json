@@ -1,0 +1,24 @@
+{
+  "name": "vuejsdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "vue-router": "^3.0.1",
+    "webpack": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tottiwxt/VuejsDemo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tottiwxt/VuejsDemo/issues"
+  },
+  "homepage": "https://github.com/tottiwxt/VuejsDemo#readme"
+}
